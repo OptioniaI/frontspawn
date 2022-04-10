@@ -1,0 +1,81 @@
+local FrontSpawn = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local on = Instance.new("TextButton")
+local off = Instance.new("TextButton")
+local loop = Instance.new("TextBox")
+
+FrontSpawn.Name = "FrontSpawn"
+FrontSpawn.Parent = game.CoreGui
+FrontSpawn.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+main.Name = "main"
+main.Parent = FrontSpawn
+main.Active = true
+main.Draggable = true
+main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+main.BorderColor3 = Color3.fromRGB(255, 255, 255)
+main.Position = UDim2.new(0.496253133, 0, 0.374692887, 0)
+main.Size = UDim2.new(0, 180, 0, 72)
+
+on.Name = "on"
+on.Parent = main
+on.BackgroundColor3 = Color3.fromRGB(206, 255, 211)
+on.BorderColor3 = Color3.fromRGB(255, 255, 255)
+on.Position = UDim2.new(0.205555558, 0, 0.444444448, 0)
+on.Size = UDim2.new(0, 41, 0, 18)
+on.Font = Enum.Font.SourceSans
+on.Text = "ON"
+on.TextColor3 = Color3.fromRGB(0, 0, 0)
+on.TextSize = 14.000
+
+off.Name = "off"
+off.Parent = main
+off.BackgroundColor3 = Color3.fromRGB(254, 177, 173)
+off.BorderColor3 = Color3.fromRGB(255, 255, 255)
+off.Position = UDim2.new(0.611111104, 0, 0.444444418, 0)
+off.Size = UDim2.new(0, 42, 0, 18)
+off.Font = Enum.Font.SourceSans
+off.Text = "OFF"
+off.TextColor3 = Color3.fromRGB(0, 0, 0)
+off.TextSize = 14.000
+
+loop.Name = "loop"
+loop.Parent = main
+loop.BackgroundColor3 = Color3.fromRGB(213, 238, 255)
+loop.Position = UDim2.new(0.305555552, 0, 0.0972222239, 0)
+loop.Size = UDim2.new(0, 70, 0, 16)
+loop.Font = Enum.Font.SourceSans
+loop.PlaceholderColor3 = Color3.fromRGB(0, 0, 0)
+loop.PlaceholderText = "AMOUNT:"
+loop.Text = ""
+loop.TextColor3 = Color3.fromRGB(0, 0, 0)
+loop.TextSize = 14.000
+
+on.MouseButton1Click:Connect(function()
+    _G.TP = true
+    while _G.TP == true do
+        task.wait()
+        game.Workspace.Gravity = 0
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(20.3636379, 7.5, loop.Text, -0.999847651, -6.08466522e-08, -0.0174545906, -6.01925478e-08, 1, -3.79998752e-08, 0.0174545906, -3.6943451e-08, -0.999847651)
+        task.wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(20.3636379, 3, loop.Text, -0.999847651, -6.08466522e-08, -0.0174545906, -6.01925478e-08, 1, -3.79998752e-08, 0.0174545906, -3.6943451e-08, -0.999847651)
+        task.wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(20.3636379, 5, loop.Text, -0.999847651, -6.08466522e-08, -0.0174545906, -6.01925478e-08, 1, -3.79998752e-08, 0.0174545906, -3.6943451e-08, -0.999847651)
+        task.wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21.2984886, 7.5, loop.Text, -0.999847651, 4.96407804e-09, -0.0174548607, 4.8701847e-09, 1, 5.42171463e-09, 0.0174548607, 5.33588018e-09, -0.999847651)
+        task.wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21.2984886, 3, loop.Text, -0.999847651, 4.96407804e-09, -0.0174548607, 4.8701847e-09, 1, 5.42171463e-09, 0.0174548607, 5.33588018e-09, -0.999847651)
+        task.wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-21.2984886, 5, loop.Text, -0.999847651, 4.96407804e-09, -0.0174548607, 4.8701847e-09, 1, 5.42171463e-09, 0.0174548607, 5.33588018e-09, -0.999847651)
+    end
+end)
+
+off.MouseButton1Click:Connect(function()
+    _G.TP = false
+    _G.LOOPGOTO = false
+    game.Workspace.Gravity = 196.2
+    task.wait(0.1)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-0.49999997, 4.99995422, -0.49999997, 1, 5.24123722e-09, -8.59606033e-14, -5.24123722e-09, 1, -7.1134747e-09, 8.59233203e-14, 7.1134747e-09, 1)
+    task.wait(0.1)
+    FrontSpawn:Destroy()
+end)
